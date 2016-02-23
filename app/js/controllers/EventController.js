@@ -2,6 +2,12 @@
 
 eventsApp.controller('EventController',
     function EventController($scope) {
+        $scope.snippet = '<span style="color:red">hi there! </span>';
+        $scope.boolValue = true;
+        $scope.maoStyle = {color:'red'};
+        $scope.maoClass = 'maomao';
+        $scope.buttonDisabled = true;
+
         $scope.event = {
             name:'Angular for MaoMao',
             catname: 'Mister Mao',
@@ -40,6 +46,13 @@ eventsApp.controller('EventController',
 
         }
 
+        //ng directive
+        $scope.upVotesession = function (session){
+            session.upVotecount ++ ;
+        }
+        $scope.downVotesession = function (session){
+            session.upVotecount -- ;
+        }
     }
 
 );
