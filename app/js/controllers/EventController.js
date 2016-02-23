@@ -18,20 +18,23 @@ eventsApp.controller('EventController',
                     name:'Morning',
                     doing:'sleep',
                     level:'easy',
-                    abstract:'she just sleep in the morning'
+                    abstract:'she just sleep in the morning',
+                    upVotecount :0
 
                 },
                 {
                     name:'Lunch',
                     doing:'poo',
                     level:'advance',
-                    abstract:'she poo at outside of box'
+                    abstract:'she poo at outside of box',
+                    upVotecount :0
                 },
                 {
                     name:'Dinner',
                     doing:'chasin coocoo',
                     level:'Introductory',
-                    abstract:'she just pet coco hand and tell coco he is stupid'
+                    abstract:'she just pet coco hand and tell coco he is stupid',
+                    upVotecount :0
                 }
             ]
 
