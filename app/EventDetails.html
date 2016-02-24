@@ -23,13 +23,14 @@
             <img ng-src="{{event.imgUrl}}" alt="{{event.catname}}"/>
             <div class="row">
                 <div class="spann11">
-                    <h2 ng-bind-template="{{event.name}} {{event.catname}}" ng-class="maoClass"></h2>
+                    <h2 ng-bind-template="{{event.name | uppercase }} {{event.catname}}" ng-class="maoClass"></h2>
                 </div>
             </div>
             <div class="row">
                 <div class="span3">
                     <div><strong>Name:</strong>{{event.catname}}</div>
                     <div><strong>Age:</strong>{{event.age}}</div>
+                    <div><strong>Birthday:</strong>{{event.date | date:'medium'}}</div>
                 </div>
                 <div class="span4">
                     <address>
@@ -39,21 +40,24 @@
                     </address>
                 </div>
             </div>
-            <div ng-bind-html="snippet">some thing</div>
-            <div ng-bind-html-unsafe="snippet">some thing</div>
 
-            <h2 ng-show="boolValue">show this</h2>
-            <h2 ng-hide="boolValue">hide this</h2>
-
-            <button class="btn" ng-disabled="buttonDisabled">I am totally disabled!</button>
-
-            <div ng-non-bindable> ng-non-bindable {{ 1 + 2}}</div>
-
-            <hr/>
             <h3>MaoMao's Daily life</h3>
+            Order By:
+            <select ng-model="sortorder" class="input-small">
+                <option selected value="name">Name</option>
+                <option value="-upVotecount">Votes</option>
+            </select>
+
+            limited Number:
+            <select  ng-model="limiteNumber" class="input-small">
+                <option ng-repeat="session in event.sessions" ng-value="$index + 1">
+                    {{$index + 1}}
+                </option>
+            </select>
+
             <ul class="thumbnails">
 
-               <li ng-repeat="session in event.sessions">
+               <li ng-repeat="session in event.sessions | orderBy: sortorder | limitTo: limiteNumber ">
                    <div class="row session">
                    <div class="span0 well votingWidget">
                     <div class="votingButton" ng-click="upVotesession(session)">
@@ -77,7 +81,23 @@
                </li>
                 </ul>
             </ul>
+            <hr/>
 
+            <div ng-bind-html="snippet">some thing</div>
+            <div ng-bind-html-unsafe="snippet">some thing</div>
+
+            <h2 ng-show="boolValue">show this</h2>
+            <h2 ng-hide="boolValue">hide this</h2>
+
+            <button class="btn" ng-disabled="buttonDisabled">I am totally disabled!</button>
+
+            <div ng-non-bindable> ng-non-bindable {{ 1 + 2}}</div>
+
+            <hr/>
+
+            <div>{{ 3.141519 | number:2}}</div>
+            <div>{{ 155545 | currency}}</div>
+            <div>{{ {a:3, b:'hi', c:{aa:35} } | json }}</div>
         </div>
     </div>
 

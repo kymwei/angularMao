@@ -7,11 +7,13 @@ eventsApp.controller('EventController',
         $scope.maoStyle = {color:'red'};
         $scope.maoClass = 'maomao';
         $scope.buttonDisabled = true;
+        $scope.sortorder = 'name';
 
         $scope.event = {
             name:'Angular for MaoMao',
             catname: 'Mister Mao',
             age: ' Ray said she is 8',
+            date: 1332313200000,
             location:{
                 add:"96 hanging gdn",
                 city:'Irvine',
@@ -41,10 +43,19 @@ eventsApp.controller('EventController',
                     level:'Introductory',
                     abstract:'she just pet coco hand and tell coco he is stupid',
                     upVotecount :0
+                },
+                {
+                    name:'late nite',
+                    doing:'abuse me',
+                    level:'Crazy',
+                    abstract:'she just step over my chest and sleep on my head',
+                    upVotecount :0
                 }
             ]
 
-        }
+        };
+
+        $scope.limitNumber = $scope.event.sessions.length;
 
         //ng directive
         $scope.upVotesession = function (session){
