@@ -18,3 +18,5 @@ Navigate your browser to `http://localhost:2222/` to see the app running in your
   - Directives (Build-in / Events)
   - Build-in Filters (uppercase, lowercase, number, currency, date, json, orderBy, limitTo, filter)
   - Custom Filters
+  - two way binding (input ,select ,textarea)
+  - validation ( angular form )

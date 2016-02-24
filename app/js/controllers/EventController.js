@@ -26,6 +26,7 @@ eventsApp.controller('EventController',
                     name:'Morning',
                     doing:'sleep',
                     level:'easy',
+                    energySpend: 1,
                     abstract:'she just sleep in the morning',
                     upVotecount :0
 
@@ -34,6 +35,7 @@ eventsApp.controller('EventController',
                     name:'Lunch',
                     doing:'poo',
                     level:'advance',
+                    energySpend: 2,
                     abstract:'she poo at outside of box',
                     upVotecount :0
                 },
@@ -41,6 +43,7 @@ eventsApp.controller('EventController',
                     name:'Dinner',
                     doing:'chasin coocoo',
                     level:'Introductory',
+                    energySpend: 3,
                     abstract:'she just pet coco hand and tell coco he is stupid',
                     upVotecount :0
                 },
@@ -48,6 +51,7 @@ eventsApp.controller('EventController',
                     name:'late nite',
                     doing:'abuse me',
                     level:'Crazy',
+                    energySpend: 4,
                     abstract:'she just step over my chest and sleep on my head',
                     upVotecount :0
                 }
