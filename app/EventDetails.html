@@ -55,9 +55,19 @@
                 </option>
             </select>
 
+
+            Show:
+            <select  ng-model="query.level" class="input-medium">
+                <option selected value="">All</option>
+                <option selected value="easy">easy</option>
+                <option selected value="advance">advance</option>
+                <option selected value="Introductory">Introductory</option>
+                <option selected value="Crazy">Crazy</option>
+            </select>
+
             <ul class="thumbnails">
 
-               <li ng-repeat="session in event.sessions | orderBy: sortorder | limitTo: limiteNumber ">
+               <li ng-repeat="session in event.sessions | orderBy: sortorder | limitTo: limiteNumber | filter:query">
                    <div class="row session">
                    <div class="span0 well votingWidget">
                     <div class="votingButton" ng-click="upVotesession(session)">
